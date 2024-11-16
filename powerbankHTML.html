@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Встановлює кодування символів на UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Визначає, як сторінка повинна відображатися на різних пристроях -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Визначає заголовок сторінки, який відображається на вкладці браузера -->
+    <title>Список повербанків</title>
+    <!-- Підключає зовнішній файл CSS для стилізації сторінки -->
+    <link rel="stylesheet" href="powerbankCSS.css">
+</head>
+
+<body>
+
+<!-- Відображає заголовок сторінки "Повербанки" з класом для стилізації -->
+<h1 class="page-title">Повербанки</h1>
+<!-- Додає текстову мітку для випадаючого списку сортування -->
+<label for="sort-options">Виводити</label>
+<!-- Створює випадаючий список для вибору параметрів сортування -->
+<select id="sort-options" onchange="shufflePowerbanks()">
+    <!-- Опція сортування за популярністю -->
+    <option value="popularity">за популярністю</option>
+    <!-- Опція сортування від дешевих до дорогих -->
+    <option value="price-asc">від дешевих до дорогих</option>
+    <!-- Опція сортування від дорогих до дешевих -->
+    <option value="price-desc">від дорогих до дешевих</option>
+    <!-- Опція сортування за відгуками -->
+    <option value="reviews">за відгуками</option>
+    <!-- Опція сортування за датою додавання -->
+    <option value="date">за датою додавання</option>
+</select>
+
+<!-- Панель для фільтрації товарів за параметрами -->
+<div class="filter-panel">
+    <!-- Заголовок панелі фільтрації -->
+    <h3>Підбір за параметрами</h3>
+    <!-- Група фільтрів для вибору виробників -->
+    <div class="filter-group">
+        <!-- Заголовок групи фільтрів -->
+        <h4>Виробники</h4>
+        <!-- Фільтр для виробника BASEUS -->
+        <label><input type="checkbox" value="BASEUS" onchange="filterPowerbanks()"> BASEUS</label>
+        <!-- Фільтр для виробника Choetech -->
+        <label><input type="checkbox" value="Choetech" onchange="filterPowerbanks()"> Choetech</label>
+        <!-- Фільтр для виробника Hoco -->
+        <label><input type="checkbox" value="Hoco" onchange="filterPowerbanks()"> Hoco</label>
+        <!-- Фільтр для виробника Xiaomi -->
+        <label><input type="checkbox" value="Xiaomi" onchange="filterPowerbanks()"> Xiaomi</label>
+    </div>
+</div>
+
+    
+<!-- Секція списку павербанків -->
+<section class="powerbank-list">
+
+    <!-- Карточка павербанка: BASEUS Bipow 20W 30000 -->
+    <div class="powerbank-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pow1.jpg" data-price="150">
+        <!-- Зображення павербанка -->
+        <img src="img/pow1.jpg" alt="BASEUS Bipow 20W 30000" class="powerbank-image">
+        <!-- Інформація про павербанк -->
+        <div class="powerbank-info">
+            <!-- Назва павербанка -->
+            <h2 class="powerbank-title">BASEUS Bipow 20W 30000</h2>
+            <!-- Теги, що характеризують павербанк -->
+            <div class="tags">
+                <span>велика ємність</span>
+                <span>USB C</span>
+                <span>для роутера</span>
+                <span>швидка зарядка</span>
+                <span>наскрізна зарядка</span>
+                <span>дисплей</span>
+                <span>Power Delivery</span>
+            </div>
+            <!-- Детальна інформація про павербанк -->
+            <div class="details">
+                <p><strong>Ємність батареї:</strong> 30000 мАгод, 111 Вт*год, Li-Pol</p>
+                <p><strong>Виходи:</strong> USB A 2 шт, макс. 18 Вт; USB type C 1 шт, макс. 20 Вт</p>
+                <p><strong>Вхід:</strong> microUSB, USB type C, макс. 18 Вт</p>
+                <p><strong>Корпус:</strong> пластиковий</p>
+                <p><strong>Вага:</strong> 645 г</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка павербанка: Xiaomi Mi Power Bank 3 20000 -->
+    <div class="powerbank-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pow2.jpg" data-price="120">
+        <!-- Зображення павербанка -->
+        <img src="img/pow2.jpg" alt="Xiaomi Mi Power Bank 3 20000" class="powerbank-image">
+        <!-- Інформація про павербанк -->
+        <div class="powerbank-info">
+            <!-- Назва павербанка -->
+            <h2 class="powerbank-title">Xiaomi Mi Power Bank 3 20000</h2>
+            <!-- Теги, що характеризують павербанк -->
+            <div class="tags">
+                <span>USB C</span>
+                <span>для роутера</span>
+                <span>швидка зарядка</span>
+                <span>Power Delivery</span>
+            </div>
+            <!-- Детальна інформація про павербанк -->
+            <div class="details">
+                <p><strong>Ємність батареї:</strong> 20000 мАгод, 74 Вт*год, Li-Ion</p>
+                <p><strong>Виходи:</strong> USB A 2 шт, макс. 18 Вт; USB type C 1 шт</p>
+                <p><strong>Вхід:</strong> microUSB, USB type C, макс. 18 Вт</p>
+                <p><strong>Корпус:</strong> пластиковий</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка павербанка: Choetech B664 -->
+    <div class="powerbank-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pow3.jpg" data-price="150">
+        <!-- Зображення павербанка -->
+        <img src="img/pow3.jpg" alt="Choetech B664" class="powerbank-image">
+        <!-- Інформація про павербанк -->
+        <div class="powerbank-info">
+            <!-- Назва павербанка -->
+            <h2 class="powerbank-title">Choetech B664</h2>
+            <!-- Теги, що характеризують павербанк -->
+            <div class="tags">
+                <span>велика ємність</span>
+                <span>USB C</span>
+                <span>для роутера</span>
+                <span>для ноутбуків (зарядка PD)</span>
+                <span>швидка зарядка</span>
+                <span>дисплей</span>
+                <span>Power Delivery</span>
+                <span>світильник</span>
+            </div>
+            <!-- Детальна інформація про павербанк -->
+            <div class="details">
+                <p><strong>Ємність батареї:</strong> 50000 мАгод, 185 Вт*год, Li-Pol</p>
+                <p><strong>Виходи:</strong> USB A 3 шт, макс. 22.5 Вт; USB type C 1 шт, макс. 65 Вт</p>
+                <p><strong>Вхід:</strong> microUSB, USB type C, макс. 65 Вт</p>
+                <p><strong>Корпус:</strong> пластиковий</p>
+                <p><strong>Вага:</strong> 1135 г</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка павербанка: Hoco J110A Powerful -->
+    <div class="powerbank-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pow4.jpg" data-price="90">
+        <!-- Зображення павербанка -->
+        <img src="img/pow4.jpg" alt="Hoco J110A Powerful" class="powerbank-image">
+        <!-- Інформація про павербанк -->
+        <div class="powerbank-info">
+            <!-- Назва павербанка -->
+            <h2 class="powerbank-title">Hoco J110A Powerful</h2>
+            <!-- Теги, що характеризують павербанк -->
+            <div class="tags">
+                <span>велика ємність</span>
+                <span>USB C</span>
+                <span>для роутера</span>
+                <span>для ноутбуків (зарядка PD)</span>
+                <span>швидка зарядка</span>
+                <span>Power Delivery</span>
+                <span>світильник</span>
+            </div>
+            <!-- Детальна інформація про павербанк -->
+            <div class="details">
+                <p><strong>Ємність батареї:</strong> 60000 мАгод, 222 Вт*год, Li-Pol</p>
+                <p><strong>Виходи:</strong> USB A 3 шт, макс. 22.5 Вт; USB type C 2 шт, макс. 65 Вт</p>
+                <p><strong>Вхід:</strong> USB type C, макс. 65 Вт</p>
+                <p><strong>Корпус:</strong> пластиковий</p>
+                <p><strong>Вага:</strong> 1263 г</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка павербанка: BASEUS Amblight 65W 30000 -->
+    <div class="powerbank-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pow5.jpg" data-price="180">
+        <!-- Зображення павербанка -->
+        <img src="img/pow5.jpg" alt="BASEUS Amblight 65W 30000" class="powerbank-image">
+        <!-- Інформація про павербанк -->
+        <div class="powerbank-info">
+            <!-- Назва павербанка -->
+            <h2 class="powerbank-title">BASEUS Amblight 65W 30000</h2>
+            <!-- Теги, що характеризують павербанк -->
+            <div class="tags">
+                <span>велика ємність</span>
+                <span>USB C</span>
+                <span>для роутера</span>
+                <span>для ноутбуків (зарядка PD)</span>
+                <span>швидка зарядка</span>
+                <span>наскрізна зарядка</span>
+                <span>дисплей</span>
+                <span>Power Delivery</span>
+            </div>
+            <!-- Детальна інформація про павербанк -->
+            <div class="details">
+                <p><strong>Ємність батареї:</strong> 30000 мАгод, 111 Вт*год, Li-Pol</p>
+                <p><strong>Виходи:</strong> USB A 4 шт, макс. 30 Вт; USB type C 1 шт, макс. 65 Вт</p>
+                <p><strong>Вхід:</strong> microUSB, USB type C, Lightning, макс. 60 Вт</p>
+                <p><strong>Корпус:</strong> пластиковий</p>
+                <p><strong>Вага:</strong> 550 г</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+</section>
+
+
+<!-- Модальне вікно для деталей товару -->
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <!-- Кнопка закриття модального вікна -->
+        <span class="close-button" onclick="closeProductModal()">×</span>
+        <!-- Назва товару -->
+        <h2 id="modal-title"></h2>
+        <!-- Зображення товару -->
+        <img id="modal-image" src="" alt="Зображення товару" class="modal-image">
+        <!-- Ціна товару -->
+        <p id="modal-price"></p>
+        <!-- Кнопка додавання до кошика -->
+        <button class="buy-button">В кошик</button>
+    </div>
+</div>
+
+
+<!-- Підключення файла JS -->
+<script src="powerbankJS.js"></script>
+
+</body>
+</html>

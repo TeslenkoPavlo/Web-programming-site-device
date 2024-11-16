@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Встановлює кодування символів у UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Забезпечує адаптацію вмісту для мобільних пристроїв -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Встановлює назву сторінки, яка відображається в заголовку браузера -->
+    <title>Вхід</title>
+    <!-- Підключає файл зі стилями CSS -->
+    <link rel="stylesheet" href="signinCSS.css">
+    <!-- Підключає бібліотеку іконок Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Контейнер для форми входу -->
+    <div class="login-container">
+        <!-- Заголовок форми входу -->
+        <h2>Маєте акаунт?</h2>
+        <!-- Початок форми входу з ідентифікатором "login-form" -->
+        <form id="login-form">
+            <!-- Група для введення імені користувача -->
+            <div class="input-group">
+                <!-- Поле для введення імені користувача з обов'язковим заповненням -->
+                <input type="text" id="username" placeholder="Ім'я користувача" required>
+            </div>
+            <!-- Група для введення пароля -->
+            <div class="input-group">
+                <!-- Поле для введення пароля з обов'язковим заповненням -->
+                <input type="password" id="password" placeholder="Пароль" required>
+                <!-- Елемент для перемикання видимості пароля -->
+                <span class="toggle-password" onclick="togglePassword()">
+                    <!-- Іконка ока для індикації -->
+                    <i class="fas fa-eye"></i>
+                </span>
+            </div>
+            <!-- Кнопка для відправлення форми -->
+            <button type="submit">Увійти</button>
+            <!-- Абзац для відображення повідомлень про помилки -->
+            <p class="error-message" id="error-message"></p>
+        </form>
+    </div>
+    <!-- Підключаємо файл зі скриптами JavaScript -->
+    <script src="signinJs.js"></script>
+</body>
+</html>

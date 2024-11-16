@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Вказує кодування символів сторінки, щоб підтримувати різні мови, зокрема українську -->
+    <meta charset="UTF-8">
+    <!-- Налаштовує масштабування сторінки для коректного відображення на мобільних пристроях -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Вказує заголовок сторінки, який відображається у вкладці браузера -->
+    <title>Список планшетів</title>
+    <!-- Підключає зовнішній CSS-файл для стилізації сторінки -->
+    <link rel="stylesheet" href="tabletCSS.css">
+</head>
+
+<body>
+
+<!-- Заголовок сторінки -->
+<h1 class="page-title">Планшети</h1>
+<!-- Метка для випадаючого списку -->
+<!-- Створює текстовий підпис для вибору параметра сортування -->
+<label for="sort-options">Виводити</label>
+<!-- Випадаючий список для вибору параметра сортування -->
+<!-- Надає користувачеві можливість вибирати критерій сортування -->
+<select id="sort-options" onchange="shuffleTablets()">
+    <!-- Опція сортування за популярністю -->
+    <option value="popularity">за популярністю</option>
+    <!-- Опція сортування від дешевих до дорогих -->
+    <option value="price-asc">від дешевих до дорогих</option>
+    <!-- Опція сортування від дорогих до дешевих -->
+    <option value="price-desc">від дорогих до дешевих</option>
+    <!-- Опція сортування за кількістю відгуків -->
+    <option value="reviews">за відгуками</option>
+    <!-- Опція сортування за датою додавання -->
+    <option value="date">за датою додавання</option>
+</select>
+
+
+<!-- Панель фільтрації -->
+<!-- Відображає набір елементів для вибору фільтрів -->
+<div class="filter-panel">
+    <!-- Заголовок панелі фільтрації -->
+    <h3>Підбір за параметрами</h3>
+    <!-- Група фільтрів -->
+    <div class="filter-group">
+        <!-- Заголовок групи фільтрів -->
+        <h4>Виробники</h4>
+        <!-- Фільтр для виробника Xiaomi -->
+        <label><input type="checkbox" value="Xiaomi" onchange="filterTablets()"> Xiaomi</label>
+        <!-- Фільтр для виробника Lenovo -->
+        <label><input type="checkbox" value="Lenovo" onchange="filterTablets()"> Lenovo</label>
+        <!-- Фільтр для виробника Blackview -->
+        <label><input type="checkbox" value="Blackview" onchange="filterTablets()"> Blackview</label>
+    </div>        
+</div>
+
+
+<!-- Весь блок розділу з планшетами -->
+<section class="tablet-list">
+    
+    <!-- Xiaomi Pad 6 -->
+    <div class="tablet-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pad1.jpg" data-price="320">
+        <!-- Основний контейнер для опису планшету Xiaomi Pad 6 -->
+        <img src="img/pad1.jpg" alt="Xiaomi Pad 6" class="tablet-image">
+        <!-- Зображення планшету, атрибут src вказує шлях до зображення, alt — опис для користувачів або у разі відсутності зображення -->
+        <div class="tablet-info">
+            <!-- Контейнер для текстової інформації про планшет -->
+            <h2 class="tablet-title">Xiaomi Pad 6</h2>
+            <!-- Назва планшету -->
+            <span class="storage">256 ГБ</span>
+            <!-- Інформація про об'єм внутрішньої пам'яті -->
+            <div class="tags">
+                <!-- Контейнер для ключових характеристик -->
+                <span>11"</span>
+                <!-- Розмір екрану -->
+                <span>Snapdragon 870</span>
+                <!-- Процесор -->
+                <span>144 Гц</span>
+                <!-- Частота оновлення екрану -->
+                <span>Dolby Vision</span>
+                <!-- Технологія дисплея -->
+                <span>Wi-Fi 6</span>
+                <!-- Підтримка Wi-Fi 6 -->
+                <span>USB C</span>
+                <!-- Наявність порту USB-C -->
+            </div>
+            <div class="details">
+                <!-- Детальна інформація про планшет -->
+                <p><strong>Екран:</strong> 11", 2880x1800 пікс, 309 ppi, 144 Гц</p>
+                <!-- Розмір, роздільна здатність, щільність пікселів і частота оновлення -->
+                <p><strong>Процесор:</strong> Snapdragon 870 5G</p>
+                <!-- Інформація про процесор -->
+                <p><strong>ОЗП:</strong> 8 ГБ</p>
+                <!-- Об'єм оперативної пам'яті -->
+                <p><strong>Камера:</strong> 13 МП, відео 4K, селфі 8 МП</p>
+                <!-- Опис характеристик камер -->
+                <p><strong>Акумулятор:</strong> 8840 мАгод, швидка зарядка</p>
+                <!-- Ємність акумулятора та підтримка швидкої зарядки -->
+                <p><strong>Корпус:</strong> метал, 490 г, товщина 6.51 мм</p>
+                <!-- Матеріал корпусу, вага та товщина -->
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+        <!-- Кнопка для перегляду товару, з викликом функції showProductDetails -->
+    </div>
+
+    <!-- Xiaomi Redmi Pad Pro -->
+    <div class="tablet-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pad2.jpg" data-price="300">
+        <!-- Основний контейнер для опису планшету Xiaomi Redmi Pad Pro -->
+        <img src="img/pad2.jpg" alt="Xiaomi Redmi Pad Pro" class="tablet-image">
+        <!-- Зображення планшету -->
+        <div class="tablet-info">
+            <!-- Контейнер для текстової інформації -->
+            <h2 class="tablet-title">Xiaomi Redmi Pad Pro</h2>
+            <!-- Назва планшету -->
+            <span class="storage">256 ГБ</span>
+            <!-- Об'єм пам'яті -->
+            <div class="tags">
+                <!-- Ключові характеристики -->
+                <span>12.1"</span>
+                <span>Snapdragon 7s Gen 2</span>
+                <span>120 Гц</span>
+                <span>Dolby Vision</span>
+                <span>Wi-Fi 6</span>
+                <span>USB C</span>
+            </div>
+            <div class="details">
+                <!-- Детальна інформація -->
+                <p><strong>Екран:</strong> 12.1", 2560x1600 пікс, 249 ppi, 120 Гц</p>
+                <p><strong>Процесор:</strong> Snapdragon 7s Gen 2</p>
+                <p><strong>ОЗП:</strong> 8 ГБ</p>
+                <p><strong>Камера:</strong> 8 МП, селфі 8 МП</p>
+                <p><strong>Акумулятор:</strong> 10000 мАгод, швидка зарядка</p>
+                <p><strong>Корпус:</strong> метал, 571 г, товщина 8 мм</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Lenovo XiaoXin Pad 2024 -->
+    <div class="tablet-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pad3.jpg" data-price="250">
+        <!-- Основний контейнер для Lenovo XiaoXin Pad 2024 -->
+        <img src="img/pad3.jpg" alt="Lenovo XiaoXin Pad 2024" class="tablet-image">
+        <!-- Зображення планшету -->
+        <div class="tablet-info">
+            <!-- Інформаційний блок -->
+            <h2 class="tablet-title">Lenovo XiaoXin Pad 2024</h2>
+            <span class="storage">128 ГБ</span>
+            <div class="tags">
+                <span>11"</span>
+                <span>Snapdragon 685</span>
+                <span>90 Гц</span>
+                <span>Стереозвук</span>
+                <span>USB C</span>
+            </div>
+            <div class="details">
+                <p><strong>Екран:</strong> 11", 1920x1200 пікс, 206 ppi, 90 Гц</p>
+                <p><strong>Процесор:</strong> Snapdragon 685</p>
+                <p><strong>ОЗП:</strong> 8 ГБ</p>
+                <p><strong>Камера:</strong> 8 МП, селфі 8 МП</p>
+                <p><strong>Акумулятор:</strong> 7040 мАгод, швидка зарядка</p>
+                <p><strong>Корпус:</strong> метал, 465 г, товщина 7 мм</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+        <!-- Lenovo Legion Tab -->
+    <div class="tablet-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pad4.jpg" data-price="340">
+        <!-- Основний контейнер для Lenovo Legion Tab -->
+        <img src="img/pad4.jpg" alt="Lenovo Legion Tab" class="tablet-image">
+        <!-- Зображення планшету -->
+        <div class="tablet-info">
+            <!-- Контейнер для текстової інформації -->
+            <h2 class="tablet-title">Lenovo Legion Tab</h2>
+            <!-- Назва планшету -->
+            <span class="storage">256 ГБ</span>
+            <!-- Об'єм внутрішньої пам'яті -->
+            <div class="tags">
+                <!-- Ключові характеристики -->
+                <span>8.8"</span>
+                <!-- Розмір екрану -->
+                <span>Snapdragon 8+ Gen 1</span>
+                <!-- Тип процесору -->
+                <span>144 Гц</span>
+                <!-- Частота оновлення екрану -->
+                <span>Dolby Vision</span>
+                <!-- Технологія дисплея -->
+                <span>Wi-Fi 6</span>
+                <!-- Підтримка стандарту Wi-Fi -->
+                <span>USB C</span>
+                <!-- Порт для зарядки/передачі даних -->
+            </div>
+            <div class="details">
+                <!-- Розширений опис -->
+                <p><strong>Екран:</strong> 8.8", 2560x1600 пікс, 343 ppi, 144 Гц</p>
+                <!-- Технічні характеристики дисплея -->
+                <p><strong>Процесор:</strong> Snapdragon 8+ Gen 1</p>
+                <!-- Тип процесора -->
+                <p><strong>ОЗП:</strong> 12 ГБ</p>
+                <!-- Обсяг оперативної пам’яті -->
+                <p><strong>Камера:</strong> подвійна, 13 МП + 2 МП, селфі 8 МП</p>
+                <!-- Інформація про основну та фронтальну камери -->
+                <p><strong>Акумулятор:</strong> 6550 мАгод, швидка зарядка</p>
+                <!-- Ємність батареї -->
+                <p><strong>Корпус:</strong> метал, 350 г, товщина 8 мм</p>
+                <!-- Матеріал корпусу, вага та товщина -->
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+        <!-- Кнопка для перегляду товару -->
+    </div>
+
+    <!-- Blackview Active 8 Pro -->
+    <div class="tablet-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/pad5.jpg" data-price="380">
+        <!-- Основний контейнер для Blackview Active 8 Pro -->
+        <img src="img/pad5.jpg" alt="Blackview Active 8 Pro" class="tablet-image">
+        <!-- Зображення планшету -->
+        <div class="tablet-info">
+            <!-- Контейнер для текстової інформації -->
+            <h2 class="tablet-title">Blackview Active 8 Pro</h2>
+            <!-- Назва планшету -->
+            <span class="storage">256 ГБ</span>
+            <!-- Об'єм внутрішньої пам'яті -->
+            <div class="tags">
+                <!-- Ключові характеристики -->
+                <span>10.36"</span>
+                <!-- Розмір дисплея -->
+                <span>Helio G99</span>
+                <!-- Тип процесора -->
+                <span>60 Гц</span>
+                <!-- Частота оновлення екрану -->
+                <span>ударостійкий</span>
+                <!-- Додаткова характеристика (ударостійкість) -->
+                <span>USB C</span>
+                <!-- Наявність порту USB-C -->
+                <span>GPS</span>
+                <!-- Підтримка GPS -->
+                <span>2 SIM</span>
+                <!-- Можливість використання двох SIM-карт -->
+            </div>
+            <div class="details">
+                <!-- Розширений опис -->
+                <p><strong>Екран:</strong> 10.36", 2000x1200 пікс, 225 ppi, 60 Гц</p>
+                <!-- Технічні характеристики дисплея -->
+                <p><strong>Процесор:</strong> Helio G99</p>
+                <!-- Тип процесора -->
+                <p><strong>ОЗП:</strong> 8 ГБ</p>
+                <!-- Обсяг оперативної пам’яті -->
+                <p><strong>Камера:</strong> 48 МП, зйомка 2K, селфі 16 МП</p>
+                <!-- Інформація про основну та фронтальну камери -->
+                <p><strong>Акумулятор:</strong> 22000 мАгод, швидка зарядка</p>
+                <!-- Ємність батареї -->
+                <p><strong>Корпус:</strong> пластик, 976 г, товщина 17 мм</p>
+                <!-- Матеріал корпусу, вага та товщина -->
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+        <!-- Кнопка для перегляду товару -->
+    </div>
+</section>
+
+
+<!-- Модальне вікно для деталей товару -->
+<div id="product-modal" class="modal">
+    <!-- Контейнер для вмісту модального вікна -->
+    <div class="modal-content">
+        <!-- Кнопка для закриття модального вікна -->
+        <span class="close-button" onclick="closeProductModal()">×</span>
+        <!-- Заголовок модального вікна -->
+        <h2 id="modal-title"></h2>
+        <!-- Зображення товару в модальному вікні -->
+        <img id="modal-image" src="" alt="" class="modal-image">
+        <!-- Ціна товару -->
+        <p id="modal-price"></p>
+        <!-- Кнопка для додавання товару до кошика -->
+        <button class="buy-button">В кошик</button>
+    </div>
+</div>
+
+
+<!-- Файл JS -->
+<script src="tabletJS.js"></script>
+
+</body>
+</html>

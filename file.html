@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Встановлюємо кодування символів -->
+    <meta charset="UTF-8">
+    <!-- Забезпечуємо адаптивність сторінки для різних пристроїв -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Заголовок сторінки -->
+    <title>Реєстрація</title>
+    <!-- Підключаємо зовнішній CSS файл для стилів -->
+    <link rel="stylesheet" href="file2.css">
+    <!-- Підключаємо бібліотеку Font Awesome для використання іконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Контейнер для блоку реєстрації -->
+    <div class="signup-container">
+        <!-- Заголовок форми -->
+        <h2>Не маєте акаунту?</h2>
+        <!-- Початок форми реєстрації -->
+        <form id="signup-form">
+            <!-- Група для поля вводу імені користувача -->
+            <div class="input-group">
+                <!-- Поле для вводу імені користувача -->
+                <input type="text" id="signup-username" placeholder="Ім'я користувача" required>
+            </div>
+            <!-- Група для поля вводу пароля -->
+            <div class="input-group">
+                <!-- Поле для вводу пароля -->
+                <input type="password" id="signup-password" placeholder="Пароль" required>
+                <!-- Іконка для перемикання видимості пароля -->
+                <span class="toggle-password" onclick="toggleSignupPassword()">
+                    <i class="fas fa-eye"></i>
+                </span>
+            </div>
+            <!-- Кнопка для відправлення форми -->
+            <button type="submit">Зареєструватися</button>
+            <!-- Повідомлення про помилки -->
+            <p class="error-message" id="signup-error-message"></p>
+        </form>
+    </div>
+    <!-- Підключення JavaScript файлу для функціоналу сторінки -->
+    <script src="file3.js" defer></script>
+</body>
+</html>

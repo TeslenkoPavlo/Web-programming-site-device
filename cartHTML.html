@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Встановлення кодування символів на UTF-8 для підтримки українських символів -->
+    <meta charset="UTF-8">
+
+    <!-- Адаптація сторінки для коректного відображення на мобільних пристроях -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Заголовок сторінки, який відображається на вкладці браузера -->
+    <title>Кошик</title>
+
+    <!-- Підключення стилів Font Awesome для використання іконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Підключення власного файлу CSS для стилізації -->
+    <link rel="stylesheet" href="cartCSS.css">
+</head>
+
+<body>
+    <!-- Основний заголовок сторінки -->
+    <h1>Кошик</h1>
+
+    <!-- Секція для відображення елементів кошика -->
+    <section id="cart-items"></section>
+
+    <!-- Розділ для підсумкової інформації -->
+    <div id="total-section">
+        <!-- Відображення загальної суми -->
+        <p id="total-price">Загальна сума: $0</p>
+
+        <!-- Кнопка для оформлення замовлення з обробкою події натискання через JavaScript -->
+        <button id="checkout-button" onclick="checkout()">Оформити замовлення</button>
+    </div>
+
+    <!-- Підключення власного JavaScript-файлу для функціональності -->
+    <script src="cartJS.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Задає кодування символів для коректного відображення -->
+    <meta charset="UTF-8">
+    <!-- Налаштовує масштабування та відображення сторінки на різних пристроях -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Встановлює заголовок сторінки, що відображається на вкладці браузера -->
+    <title>Список навушників</title>
+    <!-- Підключає зовнішній файл зі стилями для оформлення сторінки -->
+    <link rel="stylesheet" href="headphoneCSS.css">
+</head>
+
+<body>
+
+<!-- Заголовок сторінки, що відображається користувачеві -->
+<h1 class="page-title">Навушники</h1>
+<!-- Мітка для випадаючого списку сортування -->
+<label for="sort-options">Виводити</label>
+<!-- Випадаючий список для вибору параметрів сортування зі зміною списку при виборі -->
+<select id="sort-options" onchange="shuffleHeadphones()">
+    <!-- Опції сортування за популярністю -->
+    <option value="popularity">за популярністю</option>
+    <!-- Опції сортування від дешевих до дорогих -->
+    <option value="price-asc">від дешевих до дорогих</option>
+    <!-- Опції сортування від дорогих до дешевих -->
+    <option value="price-desc">від дорогих до дешевих</option>
+    <!-- Опції сортування за відгуками -->
+    <option value="reviews">за відгуками</option>
+    <!-- Опції сортування за датою додавання -->
+    <option value="date">за датою додавання</option>
+</select>
+
+
+<!-- Панель фільтрів для вибору параметрів -->
+<div class="filter-panel">
+    <!-- Заголовок для розділу фільтрів -->
+    <h3>Підбір за параметрами</h3>
+    <!-- Група фільтрів для вибору виробника -->
+    <div class="filter-group">
+        <!-- Заголовок для секції виробників -->
+        <h4>Виробники</h4>
+        <!-- Прапорець для фільтрації за Beyerdynamic зі зміною списку при виборі -->
+        <label><input type="checkbox" value="Beyerdynamic" onchange="filterHeadphones()"> Beyerdynamic</label>
+        <!-- Прапорець для фільтрації за Audio-Technica зі зміною списку при виборі -->
+        <label><input type="checkbox" value="Audio-Technica" onchange="filterHeadphones()"> Audio-Technica</label>
+        <!-- Прапорець для фільтрації за Huawei зі зміною списку при виборі -->
+        <label><input type="checkbox" value="Huawei" onchange="filterHeadphones()"> Huawei</label>
+        <!-- Прапорець для фільтрації за HiFiMan зі зміною списку при виборі -->
+        <label><input type="checkbox" value="HiFiMan" onchange="filterHeadphones()"> HiFiMan</label>
+    </div>
+</div>
+  
+
+<!-- Секція зі списком навушників -->
+<section class="headphone-list">
+
+    <!-- Карточка для Beyerdynamic DT 770 PRO -->
+    <div class="headphone-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/hd1.jpg" data-price="200">
+        <!-- Зображення навушників -->
+        <img src="img/hd1.jpg" alt="Beyerdynamic DT 770 PRO" class="headphone-image">
+        <!-- Інформація про навушники -->
+        <div class="headphone-info">
+            <!-- Назва навушників -->
+            <h2 class="headphone-title">Beyerdynamic DT 770 PRO</h2>
+            <!-- Поле для відображення інформації про сховище -->
+            <span class="storage">Немає сховища</span>
+            <!-- Теги для характеристики навушників -->
+            <div class="tags">
+                <span>DT (студійні)</span>
+                <span>моніторні</span>
+                <span>без мікрофона</span>
+            </div>
+            <!-- Детальна інформація про навушники -->
+            <div class="details">
+                <p><strong>Призначення:</strong> студійні</p>
+                <p><strong>Конструкція:</strong> накладні, закриті</p>
+                <p><strong>Характеристики:</strong> 5 – 35000 Гц, 80 Ом, 100 мВт</p>
+                <p><strong>Підключення:</strong> дротові, 3.5 мм, 6.35 мм</p>
+                <p><strong>Кабель:</strong> круглий спіральний, 3 м</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду деталей товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка для Audio-Technica ATH-M50x -->
+    <div class="headphone-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/hd2.jpg" data-price="180">
+        <!-- Зображення навушників -->
+        <img src="img/hd2.jpg" alt="Audio-Technica ATH-M50x" class="headphone-image">
+        <!-- Інформація про навушники -->
+        <div class="headphone-info">
+            <!-- Назва навушників -->
+            <h2 class="headphone-title">Audio-Technica ATH-M50x</h2>
+            <!-- Поле для відображення інформації про сховище -->
+            <span class="storage">Немає сховища</span>
+            <!-- Теги для характеристики навушників -->
+            <div class="tags">
+                <span>студійні</span>
+                <span>моніторні</span>
+                <span>без мікрофона</span>
+                <span>складаються</span>
+                <span>знімний кабель</span>
+            </div>
+            <!-- Детальна інформація про навушники -->
+            <div class="details">
+                <p><strong>Призначення:</strong> студійні</p>
+                <p><strong>Конструкція:</strong> накладні, закриті</p>
+                <p><strong>Характеристики:</strong> 15 – 28000 Гц, 38 Ом, 1600 мВт</p>
+                <p><strong>Підключення:</strong> дротові, 3.5 мм, 6.35 мм</p>
+                <p><strong>Кабель:</strong> круглий спіральний, 3 м</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду деталей товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка для Huawei FreeBuds 5 -->
+    <div class="headphone-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/hd3.jpg" data-price="130">
+        <!-- Зображення навушників -->
+        <img src="img/hd3.jpg" alt="Huawei FreeBuds 5" class="headphone-image">
+        <!-- Інформація про навушники -->
+        <div class="headphone-info">
+            <!-- Назва навушників -->
+            <h2 class="headphone-title">Huawei FreeBuds 5</h2>
+            <!-- Поле для відображення інформації про сховище -->
+            <span class="storage">Немає сховища</span>
+            <!-- Теги для характеристики навушників -->
+            <div class="tags">
+                <span>2023 рік</span>
+                <span>Freebuds</span>
+                <span>true wireless</span>
+                <span>ігровий режим</span>
+                <span>Hi-Res</span>
+                <span>ANC</span>
+                <span>захист від вологи</span>
+                <span>Bluetooth 5.2</span>
+                <span>AAC</span>
+                <span>LDAC</span>
+            </div>
+            <!-- Детальна інформація про навушники -->
+            <div class="details">
+                <p><strong>Призначення:</strong> Hi-Res</p>
+                <p><strong>Конструкція:</strong> вкладиші</p>
+                <p><strong>Характеристики:</strong> 16 – 40000 Гц</p>
+                <p><strong>Підключення:</strong> бездротові, Bluetooth v 5.2</p>
+                <p><strong>Акумулятор:</strong> 42 мАгод, до 3.5 год</p>
+                <p><strong>Зарядний кейс:</strong> 505 мАгод, до 30 год</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду деталей товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка для HiFiMan HE-R10P -->
+    <div class="headphone-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/hd4.jpg" data-price="2500">
+        <!-- Зображення навушників -->
+        <img src="img/hd4.jpg" alt="HiFiMan HE-R10P" class="headphone-image">
+        <!-- Інформація про навушники -->
+        <div class="headphone-info">
+            <!-- Назва навушників -->
+            <h2 class="headphone-title">HiFiMan HE-R10P</h2>
+            <!-- Поле для відображення інформації про сховище -->
+            <span class="storage">Немає сховища</span>
+            <!-- Теги для характеристики навушників -->
+            <div class="tags">
+                <span>2022 рік</span>
+                <span>XLR</span>
+                <span>моніторні</span>
+                <span>без мікрофона</span>
+                <span>знімний кабель</span>
+            </div>
+            <!-- Детальна інформація про навушники -->
+            <div class="details">
+                <p><strong>Призначення:</strong> студійні</p>
+                <p><strong>Конструкція:</strong> накладні, закриті</p>
+                <p><strong>Характеристики:</strong> 10 – 60000 Гц, 30 Ом</p>
+                <p><strong>Підключення:</strong> дротові, 3.5 мм, 6.35 мм, XLR</p>
+                <p><strong>Кабель:</strong> круглий, 1.5 м</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду деталей товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+</section>
+
+
+<!-- Модальне вікно для відображення деталей товару -->
+<div id="product-modal" class="modal">
+    <!-- Контейнер для вмісту модального вікна -->
+    <div class="modal-content">
+        <!-- Кнопка для закриття модального вікна -->
+        <span class="close-button" onclick="closeProductModal()">×</span>
+        <!-- Заголовок модального вікна для назви товару -->
+        <h2 id="modal-title"></h2>
+        <!-- Зображення товару у модальному вікні -->
+        <img id="modal-image" src="" alt="" class="modal-image">
+        <!-- Поле для відображення ціни товару -->
+        <p id="modal-price"></p>
+        <!-- Кнопка для додавання товару до кошика -->
+        <button class="buy-button">В кошик</button>
+    </div>
+</div>
+
+
+<!-- Підключення JS файлу -->
+<script src="headphoneJS.js"></script>
+
+</body>
+</html>

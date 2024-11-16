@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <!-- Вказівка на кодування символів у форматі UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Адаптація сторінки до ширини екрана пристрою -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Заголовок сторінки, що відображатиметься у вкладці браузера -->
+    <title>Device</title>
+    <!-- Підключення стилів Swiper.js для створення слайдерів -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Підключення стилів Font Awesome для іконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Підключення локального CSS-файлу для стилізації -->
+    <link rel="stylesheet" href="homeCSS.css">
+    <!-- Підключення бібліотеки Animate.css для анімацій -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Підключення JavaScript-модуля для слайдерів (Spring Slider) -->
+    <script
+        type="module"
+        crossorigin
+        src="https://spring-slider.uiinitiative.com/assets/index.8742a0a0.js">
+    </script>
+    <!-- Попереднє завантаження додаткових модулів для оптимізації роботи слайдерів -->
+    <link
+        rel="modulepreload"
+        href="https://spring-slider.uiinitiative.com/assets/vendor.0e76e1a6.js">
+</head>
+
+<body>
+
+<!-- Відкриття елемента навігації (головне меню сайту) -->
+<nav class="navbar">
+    <!-- Контейнер для розташування елементів меню -->
+    <div class="container">
+        <!-- Логотип -->
+        <a class="navbar-brand" href="#">Device</a>
+        <!-- Форма для пошуку товарів -->
+        <form class="search-form">
+            <!-- Поле введення для пошуку -->
+            <input class="search-input" type="search" placeholder="Пошук товарів">
+            <!-- Кнопка для підтвердження пошуку -->
+            <button class="search-button" type="submit">Знайти</button>
+        </form>
+        <!-- Список посилань навігаційного меню -->
+        <ul class="navbar-nav">
+            <!-- Пункт меню: кошик -->
+            <li><a class="nav-link" href="cartHTML.html"><i class="fas fa-cart-shopping"></i></a></li>
+            <!-- Пункт меню: контактна інформація -->
+            <li><a class="nav-link" href="contactusHTML.html"><i class="fas fa-mobile-alt"></i></a></li>
+            <!-- Пункт меню: головна сторінка -->
+            <li><a class="nav-link" href="#" onclick="alert('Ви зараз знаходитеся на головній сторінці')"><i class="fas fa-home"></i></a></li>
+            <!-- Пункт меню: вхід до акаунта -->
+            <li><a class="nav-link" href="signinHTML.html"><i class="fas fa-sign-in-alt"></i></a></li>
+            <!-- Пункт меню: реєстрація нового користувача -->
+            <li><a class="nav-link" href="file.html"><i class="fas fa-user-plus"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Контейнер для слайдера Swiper -->
+<div class="swiper-container">
+    <!-- Обгортка для слайдів -->
+    <div class="swiper-wrapper">
+        <!-- Слайд 1 із зображенням -->
+        <div class="swiper-slide"><img src="img/roz.jpg" alt="Slide 1"></div>
+        <!-- Слайд 2 із зображенням -->
+        <div class="swiper-slide"><img src="img/roz1.jpg" alt="Slide 2"></div>
+        <!-- Слайд 3 із зображенням -->
+        <div class="swiper-slide"><img src="img/roz2.jpg" alt="Slide 3"></div>
+        <!-- Слайд 4 із зображенням -->
+        <div class="swiper-slide"><img src="img/roz3.jpg" alt="Slide 4"></div>
+        <!-- Слайд 5 із зображенням -->
+        <div class="swiper-slide"><img src="img/roz4.jpg" alt="Slide 5"></div>
+    </div>
+    <!-- Елемент для пагінації слайдера -->
+    <div class="swiper-pagination"></div>
+    <!-- Кнопка для переходу до наступного слайда -->
+    <div class="swiper-button-next"></div>
+    <!-- Кнопка для повернення до попереднього слайда -->
+    <div class="swiper-button-prev"></div>
+</div>
+
+
+<!-- Секція для відображення категорій товарів -->
+<section class="categories">
+    <!-- Заголовок секції -->
+    <h2 class="category-title">Категорії товарів</h2>
+    <!-- Контейнер для розміщення елементів категорій -->
+    <div class="category-container">
+        <!-- Категорія: Телефони -->
+        <div class="category-item">
+            <!-- Іконка для категорії Телефони -->
+            <i class="fas fa-mobile-alt category-icon"></i>
+            <!-- Назва категорії -->
+            <p>Телефони</p>
+        </div>
+        <!-- Категорія: Планшети -->
+        <div class="category-item">
+            <!-- Іконка для категорії Планшети -->
+            <i class="fas fa-tablet-alt category-icon"></i>
+            <!-- Назва категорії -->
+            <p>Планшети</p>
+        </div>
+        <!-- Категорія: Ноутбуки -->
+        <div class="category-item">
+            <!-- Іконка для категорії Ноутбуки -->
+            <i class="fas fa-laptop category-icon"></i>
+            <!-- Назва категорії -->
+            <p>Ноутбуки</p>
+        </div>
+        <!-- Категорія: Монітори -->
+        <div class="category-item">
+            <!-- Іконка для категорії Монітори -->
+            <i class="fas fa-desktop category-icon"></i>
+            <!-- Назва категорії -->
+            <p>Монітори</p>
+        </div>
+        <!-- Категорія: Навушники -->
+        <div class="category-item">
+            <!-- Іконка для категорії Навушники -->
+            <i class="fas fa-headphones-alt category-icon"></i>
+            <!-- Назва категорії -->
+            <p>Навушники</p>
+        </div>
+        <!-- Категорія: Повербанки -->
+        <div class="category-item">
+            <!-- Іконка для категорії Повербанки -->
+            <i class="fas fa-battery-full category-icon"></i>
+            <!-- Назва категорії -->
+            <p>Повербанки</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Контейнер для користувацького слайдера -->
+<div id="custom-slider" class="">
+    <!-- Заголовок секції -->
+    <h2 class="popular-title">Найпопулярніші smart watch</h2>
+    <!-- Контейнер для слайдера Spring -->
+    <div class="spring-slider">
+        <!-- Контейнер Swiper -->
+        <div class="swiper">
+            <!-- Обгортка для слайдів -->
+            <div class="swiper-wrapper">
+                <!-- Слайд 1: Apple Watch SE -->
+                <div class="swiper-slide">
+                    <img src="img/wat1.jpg" alt="" />
+                    <div class="product-name">Apple Watch SE</div>
+                </div>
+                <!-- Слайд 2: Apple Watch 10 -->
+                <div class="swiper-slide glasses">
+                    <img src="img/wat6.jpg" alt="" />
+                    <div class="product-name">Apple Watch 10</div>
+                </div>
+                <!-- Слайд 3: Apple Watch Titanium -->
+                <div class="swiper-slide glasses">
+                    <img src="img/wat9.jpg" alt="" />
+                    <div class="product-name">Apple Watch Titanium</div>
+                </div>
+                <!-- Слайд 4: Apple Watch 8 -->
+                <div class="swiper-slide glasses">
+                    <img src="img/wat17.jpg" alt="" />
+                    <div class="product-name">Apple Watch 8</div>
+                </div>
+                <!-- Слайд 5: Apple Watch Ultra -->
+                <div class="swiper-slide glasses">
+                    <img src="img/wat18.jpg" alt="" />
+                    <div class="product-name">Apple Watch Ultra</div>
+                </div>
+                <!-- Слайд 6: Watch Apple Solo Loop -->
+                <div class="swiper-slide glasses">
+                    <img src="img/wat19.jpeg" alt="" />
+                    <div class="product-name">Watch Apple Solo Loop</div>
+                </div>
+                <!-- Слайд 7: Apple Watch Series 10 LTE -->
+                <div class="swiper-slide glasses">
+                    <img src="img/wat21.png" alt="" />
+                    <div class="product-name">Apple Watch Series 10 LTE</div>
+                </div>
+                <!-- Слайд 8: Apple Watch Series -->
+                <div class="swiper-slide glasses">
+                    <img src="img/wat25.png" alt="" />
+                    <div class="product-name">Apple Watch Series</div>
+                </div>
+                <!-- Слайд 9: Apple Watch Series 9 GPS -->
+                <div class="swiper-slide glasses">
+                    <img src="img/wat27.jpg" alt="" />
+                    <div class="product-name">Apple Watch Series 9 GPS</div>
+                </div>
+                <!-- Слайд 10: Apple Watch S9 -->
+                <div class="swiper-slide glasses">
+                    <img src="img/wat30.jpg" alt="" />
+                    <div class="product-name">Apple Watch S9</div>
+                </div>
+            </div>
+            <!-- Кнопка для повернення до попереднього слайда -->
+            <div class="swiper-button-prev"></div>
+            <!-- Кнопка для переходу до наступного слайда -->
+            <div class="swiper-button-next"></div>
+        </div>
+        <!-- Елемент для пагінації слайдера -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+    
+<!-- Секція відгуків клієнтів -->
+<div class="testimonials-section">
+    <!-- Заголовок секції -->
+    <h2>Відгуки наших клієнтів</h2>
+
+    <!-- Карточка з відгуком клієнта -->
+    <div class="testimonial-card">
+        <!-- Фотографія користувача -->
+        <img src="img/peo2.jpg" alt="Фотографія користувача" class="testimonial-image">
+        <!-- Ім'я користувача -->
+        <h3>Олександр Петренко</h3>
+        <!-- Посада користувача -->
+        <p class="position">Директор</p>
+        <!-- Текст відгуку -->
+        <p class="testimonial-text">
+            Магазин техніки пропонує найкращий вибір смартфонів! Придбав тут новий телефон і повністю задоволений. Асортимент дуже великий, а ціни конкурентні.
+        </p>
+    </div>
+
+    <!-- Карточка з відгуком клієнтки -->
+    <div class="testimonial-card">
+        <!-- Фотографія користувача -->
+        <img src="img/peo1.png" alt="Фотографія користувача" class="testimonial-image">
+        <!-- Ім'я користувачки -->
+        <h3>Марина Ковальчук</h3>
+        <!-- Посада користувачки -->
+        <p class="position">ІТ-спеціалістка</p>
+        <!-- Текст відгуку -->
+        <p class="testimonial-text">
+            Придбала тут смарт-годинник, і він перевершив мої очікування! Дуже якісний товар, а обслуговування було на найвищому рівні. Рекомендую цей магазин!
+        </p>
+    </div>
+
+    <!-- Карточка з відгуком клієнта -->
+    <div class="testimonial-card">
+        <!-- Фотографія користувача -->
+        <img src="img/peo4.jpg" alt="Фотографія користувача" class="testimonial-image">
+        <!-- Ім'я користувача -->
+        <h3>Іван Дорошенко</h3>
+        <!-- Посада користувача -->
+        <p class="position">Менеджер з продажу</p>
+        <!-- Текст відгуку -->
+        <p class="testimonial-text">
+            Купив тут ноутбук для роботи, і це було чудове рішення. Магазин пропонує широкий вибір ноутбуків від найкращих брендів, і ціни дуже привабливі. Доставка швидка і зручна.
+        </p>
+    </div>
+</div>
+    
+    
+<!-- Секція з партнерами -->
+<div class="partners-section">
+    <!-- Заголовок секції -->
+    <h2>Наші надійні партнери</h2>
+    <!-- Обгортка для каруселі -->
+    <div class="carousel-wrapper">
+        <!-- Контейнер каруселі -->
+        <div class="carousel">
+            <!-- Внутрішній контейнер каруселі -->
+            <div class="carousel-inner">
+                <!-- Логотип партнера: Apple -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/apple.com" alt="Apple">
+                </div>
+                <!-- Логотип партнера: Google -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/google.com" alt="Google">
+                </div>
+                <!-- Логотип партнера: Amazon -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/amazon.com" alt="Amazon">
+                </div>
+                <!-- Логотип партнера: Microsoft -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft">
+                </div>
+                <!-- Логотип партнера: Facebook -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/facebook.com" alt="Facebook">
+                </div>
+                <!-- Логотип партнера: Netflix -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/netflix.com" alt="Netflix">
+                </div>
+                <!-- Логотип партнера: Tesla -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/tesla.com" alt="Tesla">
+                </div>
+                <!-- Логотип партнера: Nike -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/nike.com" alt="Nike">
+                </div>
+                <!-- Логотип партнера: Adidas -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/adidas.com" alt="Adidas">
+                </div>
+                <!-- Логотип партнера: Coca-Cola -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/coca-cola.com" alt="Coca-Cola">
+                </div>
+
+                <!-- Початок дубльованого контенту -->
+                <!-- Повторення логотипів для безшовної каруселі -->
+                <div class="item">
+                    <img src="https://logo.clearbit.com/apple.com" alt="Apple">
+                </div>
+                <div class="item">
+                    <img src="https://logo.clearbit.com/google.com" alt="Google">
+                </div>
+                <div class="item">
+                    <img src="https://logo.clearbit.com/amazon.com" alt="Amazon">
+                </div>
+                <div class="item">
+                    <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft">
+                </div>
+                <div class="item">
+                    <img src="https://logo.clearbit.com/facebook.com" alt="Facebook">
+                </div>
+                <div class="item">
+                    <img src="https://logo.clearbit.com/netflix.com" alt="Netflix">
+                </div>
+                <div class="item">
+                    <img src="https://logo.clearbit.com/tesla.com" alt="Tesla">
+                </div>
+                <div class="item">
+                    <img src="https://logo.clearbit.com/nike.com" alt="Nike">
+                </div>
+                <div class="item">
+                    <img src="https://logo.clearbit.com/adidas.com" alt="Adidas">
+                </div>
+                <div class="item">
+                    <img src="https://logo.clearbit.com/coca-cola.com" alt="Coca-Cola">
+                </div>
+                <!-- Кінець дубльованого контенту -->
+            </div>
+        </div>
+    </div>
+</div>
+       
+
+<!-- Футер сторінки -->
+<footer class="footer">
+    <!-- Контейнер для контенту футера -->
+    <div class="container">
+        <!-- Список іконок соціальних мереж -->
+        <ul class="footer-social">
+            <!-- Посилання на Facebook -->
+            <li>
+                <a href="https://www.facebook.com/?locale=uk_UA" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <!-- Посилання на Instagram -->
+            <li>
+                <a href="https://www.instagram.com/" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <!-- Посилання на X (раніше Twitter) -->
+            <li>
+                <a href="https://x.com/?lang=uk" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <!-- Посилання на GitHub -->
+            <li>
+                <a href="https://github.com/" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+
+<!-- Підключення бібліотеки Swiper для слайдерів -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Підключення власного JavaScript файлу для додаткових функціональностей -->
+<script src="home2JS.js"></script>
+
+</body>
+</html>

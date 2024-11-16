@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Встановлення кодування символів для сторінки -->
+    <meta charset="UTF-8">
+    <!-- Налаштування масштабу для коректного відображення на мобільних пристроях -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Заголовок сторінки -->
+    <title>Список моніторів</title>
+    <!-- Підключення зовнішнього CSS-файлу для стилізації сторінки -->
+    <link rel="stylesheet" href="monitorCSS.css">
+</head>
+
+<body>
+
+<!-- Заголовок сторінки -->
+<h1 class="page-title">Монітори</h1>
+<!-- Поле сортування з опціями -->
+<label for="sort-options">Виводити</label>
+<select id="sort-options" onchange="shuffleMonitors()">
+    <!-- Опція сортування за популярністю -->
+    <option value="popularity">за популярністю</option>
+    <!-- Опція сортування від дешевих до дорогих -->
+    <option value="price-asc">від дешевих до дорогих</option>
+    <!-- Опція сортування від дорогих до дешевих -->
+    <option value="price-desc">від дорогих до дешевих</option>
+    <!-- Опція сортування за відгуками -->
+    <option value="reviews">за відгуками</option>
+    <!-- Опція сортування за датою додавання -->
+    <option value="date">за датою додавання</option>
+</select>
+
+<!-- Панель фільтрів -->
+<div class="filter-panel">
+    <!-- Заголовок панелі фільтрів -->
+    <h3>Підбір за параметрами</h3>
+    <!-- Група фільтрів за виробниками -->
+    <div class="filter-group">
+        <!-- Підзаголовок групи фільтрів -->
+        <h4>Виробники</h4>
+        <!-- Фільтр за виробником MSI -->
+        <label>
+            <input type="checkbox" value="MSI" onchange="filterMonitors()"> MSI
+        </label>
+        <!-- Фільтр за виробником Xiaomi -->
+        <label>
+            <input type="checkbox" value="Xiaomi" onchange="filterMonitors()"> Xiaomi
+        </label>
+        <!-- Фільтр за виробником Asus -->
+        <label>
+            <input type="checkbox" value="Asus" onchange="filterMonitors()"> Asus
+        </label>
+        <!-- Фільтр за виробником Philips -->
+        <label>
+            <input type="checkbox" value="Philips" onchange="filterMonitors()"> Philips
+        </label>
+        <!-- Фільтр за виробником AOC -->
+        <label>
+            <input type="checkbox" value="AOC" onchange="filterMonitors()"> AOC
+        </label>
+    </div>
+</div>
+   
+    
+
+<!-- Секція зі списком моніторів -->
+<section class="monitor-list">
+
+    <!-- Карточка монітора MSI MAG 274QRF-QD E2 -->
+    <div class="monitor-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/mon1.jpg" data-price="300">
+        <!-- Зображення монітора -->
+        <img src="img/mon1.jpg" alt="MSI MAG 274QRF-QD E2" class="monitor-image">
+        <!-- Інформація про монітор -->
+        <div class="monitor-info">
+            <!-- Назва монітора -->
+            <h2 class="monitor-title">MSI MAG 274QRF-QD E2</h2>
+            <!-- Розмір екрану та колір корпусу -->
+            <span class="monitor-size">27" / чорний</span>
+            <!-- Теги з характеристиками -->
+            <div class="tags">
+                <span>2024 рік</span>
+                <span>ігровий</span>
+                <span>QLED</span>
+                <span>Power Delivery</span>
+                <span>HDR</span>
+                <span>TÜV Rheinland</span>
+                <span>Adaptive-Sync</span>
+                <span>KVM</span>
+                <span>хороший sRGB</span>
+                <span>DCI-P3</span>
+            </div>
+            <!-- Детальна інформація -->
+            <div class="details">
+                <p><strong>Екран:</strong> 27", 2560x1440 (16:9)</p>
+                <p><strong>Матриця:</strong> QLED, відгук 1 мс, 180 Гц</p>
+                <p><strong>Функції:</strong> VESA Adaptive-Sync, HDR, PBP, Flicker-Free</p>
+                <p><strong>Підключення:</strong> HDMI, DisplayPort, USB C</p>
+            </div>
+        </div>
+        <!-- Кнопка перегляду товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка монітора Xiaomi Mini LED Gaming Monitor G Pro 27i -->
+    <div class="monitor-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/mon2.jpg" data-price="450">
+        <img src="img/mon2.jpg" alt="Xiaomi Mini LED Gaming Monitor G Pro 27i" class="monitor-image">
+        <div class="monitor-info">
+            <h2 class="monitor-title">Xiaomi Mini LED Gaming Monitor G Pro 27i</h2>
+            <span class="monitor-size">27" / чорний</span>
+            <div class="tags">
+                <span>2024 рік</span>
+                <span>ігровий</span>
+                <span>HDR</span>
+                <span>TÜV Rheinland</span>
+                <span>FreeSync</span>
+                <span>хороший sRGB</span>
+                <span>хороший DCI-P3</span>
+            </div>
+            <div class="details">
+                <p><strong>Екран:</strong> 27", 2560x1440 (16:9)</p>
+                <p><strong>Матриця:</strong> Mini LED IPS, відгук 1 мс, 180 Гц</p>
+                <p><strong>Функції:</strong> AMD FreeSync, HDR, Flicker-Free</p>
+                <p><strong>Підключення:</strong> HDMI, DisplayPort</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка монітора Asus TUF Gaming VG27AQ3A -->
+    <div class="monitor-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/mon3.jpg" data-price="350">
+        <img src="img/mon3.jpg" alt="Asus TUF Gaming VG27AQ3A" class="monitor-image">
+        <div class="monitor-info">
+            <h2 class="monitor-title">Asus TUF Gaming VG27AQ3A</h2>
+            <span class="monitor-size">27" / чорний</span>
+            <div class="tags">
+                <span>2023 рік</span>
+                <span>TUF</span>
+                <span>ігровий</span>
+                <span>HDR</span>
+                <span>TÜV Rheinland</span>
+                <span>Adaptive-Sync</span>
+                <span>FreeSync</span>
+                <span>динаміки</span>
+                <span>хороший sRGB</span>
+            </div>
+            <div class="details">
+                <p><strong>Екран:</strong> 27", 2560x1440 (16:9)</p>
+                <p><strong>Матриця:</strong> IPS, відгук 1 мс, 180 Гц</p>
+                <p><strong>Функції:</strong> AMD FreeSync Premium, NVIDIA G-Sync Compatible, VESA Adaptive-Sync, HDR, Flicker-Free</p>
+                <p><strong>Підключення:</strong> HDMI, DisplayPort</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка монітора Philips 245E1S -->
+    <div class="monitor-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/mon4.jpg" data-price="250">
+        <img src="img/mon4.jpg" alt="Philips 245E1S" class="monitor-image">
+        <div class="monitor-info">
+            <h2 class="monitor-title">Philips 245E1S</h2>
+            <span class="monitor-size">24" / чорний</span>
+            <div class="tags">
+                <span>E series</span>
+                <span>FreeSync</span>
+                <span>хороший NTSC</span>
+                <span>хороший sRGB</span>
+            </div>
+            <div class="details">
+                <p><strong>Екран:</strong> 24", 2560x1440 (16:9)</p>
+                <p><strong>Матриця:</strong> IPS, відгук 4 мс, 75 Гц</p>
+                <p><strong>Функції:</strong> AMD FreeSync, Flicker-Free</p>
+                <p><strong>Підключення:</strong> VGA, HDMI, DisplayPort</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка монітора AOC CQ27G2U -->
+    <div class="monitor-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/mon5.jpg" data-price="400">
+        <img src="img/mon5.jpg" alt="AOC CQ27G2U" class="monitor-image">
+        <div class="monitor-info">
+            <h2 class="monitor-title">AOC CQ27G2U</h2>
+            <span class="monitor-size">27" / чорний</span>
+            <div class="tags">
+                <span>2020 рік</span>
+                <span>ігровий</span>
+                <span>вигнутий</span>
+                <span>FreeSync</span>
+                <span>динаміки</span>
+                <span>хаб USB 3.0</span>
+                <span>хороший sRGB</span>
+            </div>
+            <div class="details">
+                <p><strong>Екран:</strong> 27", 2560x1440 (16:9)</p>
+                <p><strong>Ізогнутість:</strong> 1500R</p>
+                <p><strong>Матриця:</strong> VA, відгук 5 мс, 144 Гц</p>
+                <p><strong>Функції:</strong> AMD FreeSync, Flicker-Free</p>
+                <p><strong>Підключення:</strong> VGA, HDMI, DisplayPort</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+</section>
+
+
+<!-- Модальне вікно для відображення деталей товару -->
+<div id="product-modal" class="modal">
+    <!-- Вміст модального вікна -->
+    <div class="modal-content">
+        <!-- Кнопка для закриття модального вікна -->
+        <span class="close-button" onclick="closeProductModal()">×</span>
+        <!-- Заголовок з назвою товару -->
+        <h2 id="modal-title"></h2>
+        <!-- Зображення товару -->
+        <img id="modal-image" src="" alt="" class="modal-image">
+        <!-- Текст з ціною товару -->
+        <p id="modal-price"></p>
+        <!-- Кнопка для додавання товару в кошик -->
+        <button class="buy-button">В кошик</button>
+    </div>
+</div>
+
+<!-- Файл JS -->
+<script src="monitorJS.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+* {
+    margin: 0; /* Знімаємо зовнішні відступи */
+    padding: 0; /* Знімаємо внутрішні відступи */
+    box-sizing: border-box; /* Встановлюємо розрахунок розмірів елементів */
+}
+
+/* Основні стилі для тіла сторінки */
+body {
+    font-family: Arial, sans-serif; /* Встановлюємо шрифт */
+    background-color: #ffffff; /* Колір фону */
+    color: #333; /* Основний колір тексту */
+    padding: 20px; /* Внутрішній відступ для тіла */
+}
+
+/* Контейнер для списку моніторів */
+.monitor-list {
+    width: 800px; /* Ширина списку */
+    margin-top: 30px; /* Відступ зверху */
+}
+
+/* Карточка монітора */
+.monitor-card {
+    position: relative; /* Для внутрішнього позиціонування елементів */
+    display: flex; /* Встановлюємо flex для розташування контенту */
+    align-items: center; /* Вирівнюємо елементи по вертикалі */
+    border: 1px solid #ddd; /* Рамка */
+    border-radius: 8px; /* Закруглення кутів */
+    padding: 15px; /* Внутрішні відступи */
+    margin-bottom: 20px; /* Відступ знизу між карточками */
+    background-color: #fff; /* Колір фону */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тінь */
+    transition: transform 0.3s, background-color 0.3s; /* Анімація при наведенні */
+    overflow: hidden; /* Обрізаємо вміст за межами блоку */
+}
+
+/* Анімація при наведенні на карточку */
+.monitor-card:hover {
+    transform: translateY(-5px); /* Зсув вверх */
+    background-color: rgba(0, 0, 0, 0.05); /* Зміна фону */
+}
+
+/* Зображення монітора */
+.monitor-image {
+    width: 120px; /* Ширина зображення */
+    height: auto; /* Пропорційна висота */
+    margin-right: 20px; /* Відступ праворуч */
+}
+
+/* Інформація про монітор */
+.monitor-info {
+    width: calc(100% - 140px); /* Ширина з урахуванням зображення */
+}
+
+/* Назва монітора */
+.monitor-title {
+    font-size: 18px; /* Розмір шрифту */
+    color: #333; /* Колір тексту */
+    margin-bottom: 5px; /* Відступ знизу */
+}
+
+/* Інформація про пам'ять */
+.storage {
+    font-size: 14px; /* Розмір шрифту */
+    color: #666; /* Колір тексту */
+    margin-bottom: 10px; /* Відступ знизу */
+}
+
+/* Контейнер для тегів */
+.tags {
+    display: flex; /* Використовуємо flex для розташування */
+    flex-wrap: wrap; /* Переносимо теги при необхідності */
+    gap: 8px; /* Відстань між тегами */
+    margin-bottom: 10px; /* Відступ знизу */
+}
+
+/* Стилі для тегів */
+.tags span {
+    padding: 5px 10px; /* Внутрішні відступи */
+    font-size: 12px; /* Розмір шрифту */
+    background-color: #f0f0f0; /* Колір фону */
+    border-radius: 4px; /* Закруглення кутів */
+    color: #555; /* Колір тексту */
+}
+
+/* Деталі монітора */
+.details p {
+    font-size: 14px; /* Розмір шрифту */
+    color: #444; /* Колір тексту */
+    margin-bottom: 5px; /* Відступ знизу */
+}
+
+/* Кнопка "Переглянути товар" */
+.view-button {
+    position: absolute; /* Для розташування в центрі */
+    top: 50%; /* Вирівнювання по вертикалі */
+    left: 50%; /* Вирівнювання по горизонталі */
+    transform: translate(-50%, -50%); /* Центрування */
+    padding: 10px 20px; /* Розмір кнопки */
+    font-size: 14px; /* Розмір шрифту */
+    color: #fff; /* Колір тексту */
+    background-color: #007bff; /* Колір фону кнопки */
+    border: none; /* Без рамки */
+    border-radius: 4px; /* Закруглення кутів */
+    opacity: 0; /* Невидимість кнопки за замовчуванням */
+    transition: opacity 0.3s; /* Анімація прозорості */
+    cursor: pointer; /* Вказівник при наведенні */
+}
+
+/* Кнопка стає видимою при наведенні */
+.monitor-card:hover .view-button {
+    opacity: 1; /* Робимо кнопку видимою */
+}
+
+/* Стилі для модального вікна */
+.modal {
+    display: none; /* Сховуємо вікно за замовчуванням */
+    position: fixed; /* Фіксоване положення */
+    top: 0; /* Вирівнювання зверху */
+    left: 0; /* Вирівнювання зліва */
+    width: 100vw; /* Повна ширина */
+    height: 100vh; /* Повна висота */
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+    align-items: center; /* Вирівнювання контенту по вертикалі */
+    justify-content: center; /* Вирівнювання контенту по горизонталі */
+}
+
+/* Контент модального вікна */
+.modal-content {
+    background-color: #fff; /* Колір фону */
+    padding: 20px; /* Внутрішні відступи */
+    border-radius: 8px; /* Закруглення кутів */
+    text-align: center; /* Центрування тексту */
+    width: 400px; /* Ширина вікна */
+    position: relative; /* Для розташування елементів усередині */
+}
+
+/* Зображення в модальному вікні */
+.modal-image {
+    width: 50%; /* Ширина зображення */
+    border-radius: 8px; /* Закруглення кутів */
+    margin: 20px auto; /* Центрування */
+}
+
+/* Кнопка закриття модального вікна */
+.close-button {
+    position: absolute; /* Розташування у верхньому правому куті */
+    top: 10px; /* Відступ зверху */
+    right: 10px; /* Відступ праворуч */
+    font-size: 24px; /* Розмір шрифту */
+    cursor: pointer; /* Вказівник при наведенні */
+    color: #333; /* Колір тексту */
+}
+
+/* Стилі для ціни та кнопки покупки */
+#modal-price, .buy-button {
+    margin-top: 15px; /* Відступ зверху */
+}
+
+/* Кнопка "Купити" */
+.buy-button {
+    padding: 10px 20px; /* Розмір кнопки */
+    font-size: 16px; /* Розмір шрифту */
+    color: #fff; /* Колір тексту */
+    background-color: #28a745; /* Колір кнопки */
+    border: none; /* Без рамки */
+    border-radius: 4px; /* Закруглення кутів */
+    cursor: pointer; /* Вказівник при наведенні */
+}
+
+/* Заголовок сторінки */
+.page-title {
+    font-size: 24px; /* Розмір шрифту */
+    color: #000000; /* Колір тексту */
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
+/* Стилі для міток */
+label {
+    font-size: 16px; /* Розмір шрифту */
+    color: #333; /* Колір тексту */
+    margin-right: 10px; /* Відступ праворуч */
+}
+
+/* Список для сортування */
+#sort-options {
+    padding: 8px; /* Внутрішні відступи */
+    font-size: 16px; /* Розмір шрифту */
+    border: 1px solid #007bff; /* Рамка */
+    border-radius: 4px; /* Закруглення */
+    cursor: pointer; /* Вказівник при наведенні */
+}
+
+/* Панель фільтрів */
+.filter-panel {
+    position: fixed; /* Фіксована панель */
+    top: 20px; /* Відступ зверху */
+    right: 20px; /* Відступ праворуч */
+    background-color: #fafafa; /* Колір фону */
+    padding: 15px; /* Внутрішні відступи */
+    border-radius: 8px; /* Закруглення кутів */
+    width: 220px; /* Ширина панелі */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Тінь */
+}
+
+/* Заголовок фільтру */
+.filter-panel h3 {
+    background-color: #333333; /* Колір фону */
+    color: white; /* Колір тексту */
+    padding: 10px; /* Відступи */
+    font-size: 1.1em; /* Розмір шрифту */
+    font-weight: bold; /* Жирний шрифт */
+    border-radius: 8px 8px 0 0; /* Закруглення тільки верхніх кутів */
+    text-align: center; /* Центрування тексту */
+    margin-top: 0; /* Забираємо верхній відступ */
+    margin-bottom: 15px; /* Відступ знизу */
+}
+
+/* Групи фільтрів */
+.filter-group h4 {
+    color: #444; /* Колір тексту */
+    font-size: 1em; /* Розмір шрифту */
+    font-weight: 600; /* Напівжирний шрифт */
+    margin-bottom: 10px; /* Відступ знизу */
+}
+
+/* Мітки фільтрів */
+label {
+    display: flex; /* Flex для вирівнювання */
+    align-items: center; /* Вирівнювання елементів */
+    font-size: 0.95em; /* Розмір шрифту */
+    margin-bottom: 10px; /* Відступ знизу */
+    color: #333; /* Колір тексту */
+}
+
+/* Стилі для чекбоксів */
+input[type="checkbox"] {
+    margin-right: 8px; /* Відступ праворуч */
+    transform: scale(1.1); /* Збільшення розміру */
+    accent-color: #333333; /* Колір акценту */
+}

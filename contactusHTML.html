@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Встановлюємо кодування документа як UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Додаємо мета-тег для коректного відображення на мобільних пристроях -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Встановлюємо заголовок сторінки -->
+    <title>Зв'яжіться з нами</title>
+    <!-- Підключаємо зовнішній CSS-файл для стилізації -->
+    <link rel="stylesheet" href="contactusCSS.css">
+    <!-- Підключаємо іконки Font Awesome для використання у дизайні -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Підключаємо шрифт Playfair Display з Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Контейнер для форми зворотного зв'язку -->
+    <div class="contact-form-container">
+        <!-- Заголовок форми з іконкою конверта -->
+        <h2><i class="fas fa-envelope"></i> Зв'яжіться з нами</h2>
+        <!-- Початок HTML-форми -->
+        <form id="contactForm">
+            <!-- Поле введення для повного імені -->
+            <input type="text" id="fullName" placeholder="Повне ім'я" required>
+            <!-- Повідомлення про помилку для імені -->
+            <span class="error-message" id="nameError"></span>
+
+            <!-- Поле введення для електронної пошти -->
+            <input type="email" id="email" placeholder="Електронна пошта" required>
+            <!-- Повідомлення про помилку для електронної пошти -->
+            <span class="error-message" id="emailError"></span>
+
+            <!-- Поле введення для номера телефону -->
+            <input type="tel" id="phone" placeholder="Номер телефону" required>
+            <!-- Повідомлення про помилку для номера телефону -->
+            <span class="error-message" id="phoneError"></span>
+
+            <!-- Текстова область для повідомлення -->
+            <textarea id="message" placeholder="Ваше повідомлення" required></textarea>
+            <!-- Повідомлення про помилку для текстового поля -->
+            <span class="error-message" id="messageError"></span>
+
+            <!-- Кнопка для надсилання повідомлення з іконкою літачка -->
+            <button type="submit"><i class="fas fa-paper-plane"></i> Надіслати повідомлення</button>
+        </form>
+        <!-- Повідомлення про успішне надсилання -->
+        <p id="successMessage" class="hidden"><i class="fas fa-check-circle"></i> Ваше повідомлення надіслано успішно!</p>
+    </div>
+
+    <!-- Підключення зовнішнього JavaScript-файлу для роботи з формою -->
+    <script src="contactusJS.js"></script>
+</body>
+</html>

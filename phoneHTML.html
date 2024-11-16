@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Вказує, що документ використовує кодування UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Встановлює, що ширина екрана дорівнює ширині пристрою, а масштаб 1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Встановлює назву сторінки, яка буде відображатись у вкладці браузера -->
+    <title>Список телефонів</title>
+    <!-- Підключає зовнішній файл стилів для оформлення сторінки -->
+    <link rel="stylesheet" href="phoneCSS.css">
+</head>
+
+<body>
+
+<!-- Основний заголовок сторінки -->
+<h1 class="page-title">Мобільні телефони</h1>
+<!-- Мітка для випадаючого списку сортування -->
+<label for="sort-options">Виводити</label>
+<!-- Випадаючий список для вибору параметрів сортування -->
+<select id="sort-options" onchange="shufflePhones()">
+    <!-- Опція сортування за популярністю -->
+    <option value="popularity">за популярністю</option>
+    <!-- Опція сортування від дешевих до дорогих -->
+    <option value="price-asc">від дешевих до дорогих</option>
+    <!-- Опція сортування від дорогих до дешевих -->
+    <option value="price-desc">від дорогих до дешевих</option>
+    <!-- Опція сортування за відгуками -->
+    <option value="reviews">за відгуками</option>
+    <!-- Опція сортування за датою додавання -->
+    <option value="date">за датою додавання</option>
+</select>
+
+
+<!-- Панель для фільтрації товарів за параметрами -->
+<div class="filter-panel">
+    <!-- Заголовок секції фільтрації -->
+    <h3>Підбір за параметрами</h3>
+    <!-- Група фільтрів для вибору виробників -->
+    <div class="filter-group">
+        <!-- Заголовок групи фільтрів -->
+        <h4>Виробники</h4>
+        <!-- Фільтр для вибору Apple -->
+        <label><input type="checkbox" value="Apple" onchange="filterPhones()"> Apple</label>
+        <!-- Фільтр для вибору Xiaomi -->
+        <label><input type="checkbox" value="Xiaomi" onchange="filterPhones()"> Xiaomi</label>
+        <!-- Фільтр для вибору Poco -->
+        <label><input type="checkbox" value="Poco" onchange="filterPhones()"> Poco</label>
+        <!-- Фільтр для вибору Samsung -->
+        <label><input type="checkbox" value="Samsung" onchange="filterPhones()"> Samsung</label>
+    </div>
+</div>
+
+
+<!-- Секція для списку телефонів -->
+<section class="phone-list">
+
+    <!-- Карточка товару: Apple iPhone 15 Pro Max -->
+    <div class="phone-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/iphone15.jpg" data-price="899">
+        <!-- Зображення телефону -->
+        <img src="img/iphone15.jpg" alt="Apple iPhone 15 Pro Max" class="phone-image">
+        <!-- Інформація про телефон -->
+        <div class="phone-info">
+            <!-- Назва телефону -->
+            <h2 class="phone-title">Apple iPhone 15 Pro Max</h2>
+            <!-- Обсяг пам'яті -->
+            <span class="storage">256 ГБ</span>
+            <!-- Теги для опису характеристик телефону -->
+            <div class="tags">
+                <span>2023 рік</span>
+                <span>камерафон</span>
+                <span>хороший звук</span>
+                <span>120 Гц</span>
+                <span>NFC</span>
+                <span>бездротова зарядка</span>
+                <span>USB C 3 fast</span>
+            </div>
+            <!-- Деталі технічних характеристик -->
+            <div class="details">
+                <p><strong>Екран:</strong> 6.7", OLED, 2796x1290, 120 Гц</p>
+                <p><strong>Камера:</strong> 3 модулі, 48 МП + 13.4 МП + 12.7 МП</p>
+                <p><strong>Процесор:</strong> Apple A17 Pro</p>
+                <p><strong>ОЗП:</strong> 8 ГБ, LPDDR5</p>
+                <p><strong>Акумулятор:</strong> 4441 мАгод</p>
+                <p><strong>Корпус:</strong> скло, 221 г, товщина 8 мм</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду деталей товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка товару: Xiaomi Redmi Note 13 Pro 5G -->
+    <div class="phone-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/redmi13.jpg" data-price="400">
+        <!-- Зображення телефону -->
+        <img src="img/redmi13.jpg" alt="Xiaomi Redmi Note 13 Pro 5G" class="phone-image">
+        <!-- Інформація про телефон -->
+        <div class="phone-info">
+            <!-- Назва телефону -->
+            <h2 class="phone-title">Xiaomi Redmi Note 13 Pro 5G</h2>
+            <!-- Обсяг пам'яті -->
+            <span class="storage">256 ГБ / 8 ГБ</span>
+            <!-- Теги для опису характеристик телефону -->
+            <div class="tags">
+                <span>2023 рік</span>
+                <span>Redmi Note</span>
+                <span>камерафон</span>
+                <span>120 Гц</span>
+                <span>NFC</span>
+                <span>без microSD</span>
+                <span>fast charge</span>
+            </div>
+            <!-- Деталі технічних характеристик -->
+            <div class="details">
+                <p><strong>Екран:</strong> 6.67", AMOLED, 2712x1220, 120 Гц</p>
+                <p><strong>Камера:</strong> 3 модулі, 200 МП + 8 МП + макро</p>
+                <p><strong>Відео:</strong> fullHD 60 к/с, 4K, стабілізація</p>
+                <p><strong>Процесор:</strong> Snapdragon 7s Gen 2</p>
+                <p><strong>ОЗП:</strong> 8 ГБ, LPDDR4X</p>
+                <p><strong>Акумулятор:</strong> 5100 мАгод</p>
+                <p><strong>Корпус:</strong> скло, 187 г, товщина 8 мм</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду деталей товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка товару: Apple iPhone 16 Pro Max -->
+    <div class="phone-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/iphone16.jpg" data-price="1100">
+        <!-- Зображення телефону -->
+        <img src="img/iphone16.jpg" alt="Apple iPhone 16 Pro Max" class="phone-image">
+        <!-- Інформація про телефон -->
+        <div class="phone-info">
+            <!-- Назва телефону -->
+            <h2 class="phone-title">Apple iPhone 16 Pro Max</h2>
+            <!-- Обсяг пам'яті -->
+            <span class="storage">256 ГБ</span>
+            <!-- Теги для опису характеристик телефону -->
+            <div class="tags">
+                <span>2024 рік</span>
+                <span>камерафон</span>
+                <span>флагман</span>
+                <span>120 Гц</span>
+                <span>NFC</span>
+                <span>бездротова зарядка</span>
+                <span>USB C 3 fast</span>
+            </div>
+            <!-- Деталі технічних характеристик -->
+            <div class="details">
+                <p><strong>Екран:</strong> 6.9", OLED (LTPO), 2868x1320, 120 Гц</p>
+                <p><strong>Камера:</strong> 3 модулі, 48 МП + 48 МП + 12 МП</p>
+                <p><strong>Відео:</strong> fullHD 60 к/с, 4K, стабілізація</p>
+                <p><strong>Процесор:</strong> Apple A18 Pro</p>
+                <p><strong>ОЗП:</strong> 8 ГБ, LPDDR5</p>
+                <p><strong>Акумулятор:</strong> 4685 мАгод</p>
+                <p><strong>Корпус:</strong> скло, 227 г, товщина 8 мм</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду деталей товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка товару: Poco X6 Pro -->
+    <div class="phone-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/poco.jpg" data-price="420">
+        <!-- Зображення телефону -->
+        <img src="img/poco.jpg" alt="Poco X6 Pro" class="phone-image">
+        <!-- Інформація про телефон -->
+        <div class="phone-info">
+            <!-- Назва телефону -->
+            <h2 class="phone-title">Poco X6 Pro</h2>
+            <!-- Обсяг пам'яті -->
+            <span class="storage">256 ГБ / 8 ГБ</span>
+            <!-- Теги для опису характеристик телефону -->
+            <div class="tags">
+                <span>2023 рік</span>
+                <span>X Series</span>
+                <span>120 Гц</span>
+                <span>NFC</span>
+                <span>без microSD</span>
+                <span>fast charge</span>
+            </div>
+            <!-- Деталі технічних характеристик -->
+            <div class="details">
+                <p><strong>Екран:</strong> 6.67", AMOLED, 2712x1220, 120 Гц</p>
+                <p><strong>Камера:</strong> 3 модулі, 64 МП + 8 МП + макро</p>
+                <p><strong>Відео:</strong> fullHD 60 к/с, 4K, стабілізація</p>
+                <p><strong>Процесор:</strong> Dimensity 8300 Ultra</p>
+                <p><strong>ОЗП:</strong> 8 ГБ, LPDDR5X</p>
+                <p><strong>Акумулятор:</strong> 5000 мАгод</p>
+                <p><strong>Корпус:</strong> пластик, 186 г, товщина 8 мм</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду деталей товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карточка товару: Samsung Galaxy S24 Ultra -->
+    <div class="phone-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/samsung24.jpg" data-price="1200">
+        <!-- Зображення телефону -->
+        <img src="img/samsung24.jpg" alt="Samsung Galaxy S24 Ultra" class="phone-image">
+        <!-- Інформація про телефон -->
+        <div class="phone-info">
+            <!-- Назва телефону -->
+            <h2 class="phone-title">Samsung Galaxy S24 Ultra</h2>
+            <!-- Обсяг пам'яті -->
+            <span class="storage">256 ГБ / 12 ГБ</span>
+            <!-- Теги для опису характеристик телефону -->
+            <div class="tags">
+                <span>2024 рік</span>
+                <span>Galaxy S</span>
+                <span>камерафон</span>
+                <span>флагман</span>
+                <span>хороша автономність</span>
+                <span>120 Гц</span>
+                <span>NFC</span>
+                <span>fast charge</span>
+                <span>без microSD</span>
+                <span>Wi-Fi 7</span>
+                <span>USB C 3 fast</span>
+            </div>
+            <!-- Деталі технічних характеристик -->
+            <div class="details">
+                <p><strong>Екран:</strong> 6.8", AMOLED (LTPO), 3120x1440, 120 Гц</p>
+                <p><strong>Камера:</strong> 4 модулі, 200 МП + 12 МП + 10 МП</p>
+                <p><strong>Відео:</strong> fullHD 60 к/с, 4K, стабілізація</p>
+                <p><strong>Процесор:</strong> Snapdragon 8 Gen 3</p>
+                <p><strong>ОЗП:</strong> 12 ГБ, LPDDR5X</p>
+                <p><strong>Акумулятор:</strong> 5000 мАгод</p>
+                <p><strong>Корпус:</strong> скло, 232 г, товщина 9 мм</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду деталей товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+</section>
+
+
+<!-- Модальне вікно для деталей товару -->
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <!-- Кнопка закриття модального вікна -->
+        <span class="close-button" onclick="closeProductModal()">×</span>
+        <!-- Назва товару -->
+        <h2 id="modal-title"></h2>
+        <!-- Зображення товару -->
+        <img id="modal-image" src="" alt="" class="modal-image">
+        <!-- Ціна товару -->
+        <p id="modal-price"></p>
+        <!-- Кнопка для додавання товару до кошика -->
+        <button class="buy-button">В кошик</button>
+    </div>
+</div>
+
+
+<!-- Файл JS -->
+<script src="phoneJS.js"></script>
+
+</body>
+</html>

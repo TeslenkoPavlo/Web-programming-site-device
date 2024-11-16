@@ -1,0 +1,217 @@
+<!DOCTYPE html> 
+<html lang="uk">
+<head>
+    <!-- Встановлення кодування символів для документа -->
+    <meta charset="UTF-8">
+    <!-- Вказівка браузеру встановити масштабування відповідно до ширини пристрою -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Встановлення заголовка сторінки -->
+    <title>Список ноутбуків</title>
+    <!-- Підключення зовнішнього файлу зі стилями -->
+    <link rel="stylesheet" href="laptopCSS.css">
+</head>
+
+<body>
+
+<!-- Заголовок сторінки з класом для стилізації -->
+<h1 class="page-title">Ноутбуки</h1>
+<!-- Мітка для випадаючого списку з варіантами сортування -->
+<label for="sort-options">Виводити</label>
+<!-- Випадаючий список для вибору параметра сортування -->
+<select id="sort-options" onchange="shuffleLaptops()">
+    <!-- Варіант сортування за популярністю -->
+    <option value="popularity">за популярністю</option>
+    <!-- Варіант сортування від дешевих до дорогих -->
+    <option value="price-asc">від дешевих до дорогих</option>
+    <!-- Варіант сортування від дорогих до дешевих -->
+    <option value="price-desc">від дорогих до дешевих</option>
+    <!-- Варіант сортування за відгуками -->
+    <option value="reviews">за відгуками</option>
+    <!-- Варіант сортування за датою додавання -->
+    <option value="date">за датою додавання</option>
+</select>
+
+
+<!-- Панель для фільтрації товарів -->
+<div class="filter-panel">
+    <!-- Заголовок секції фільтрації -->
+    <h3>Підбір за параметрами</h3>
+    <!-- Група фільтрів для вибору виробників -->
+    <div class="filter-group">
+        <!-- Заголовок групи фільтрів -->
+        <h4>Виробники</h4>
+        <!-- Фільтр для виробника Apple -->
+        <label><input type="checkbox" value="Apple" onchange="filterLaptops()"> Apple</label>
+        <!-- Фільтр для виробника Gigabyte -->
+        <label><input type="checkbox" value="Gigabyte" onchange="filterLaptops()"> Gigabyte</label>
+        <!-- Фільтр для виробника Asus -->
+        <label><input type="checkbox" value="Asus" onchange="filterLaptops()"> Asus</label>
+        <!-- Фільтр для виробника Acer -->
+        <label><input type="checkbox" value="Acer" onchange="filterLaptops()"> Acer</label>
+        <!-- Фільтр для виробника Lenovo -->
+        <label><input type="checkbox" value="Lenovo" onchange="filterLaptops()"> Lenovo</label>
+    </div>
+</div>
+    
+
+<!-- Секція для списку ноутбуків -->
+<section class="laptop-list">
+
+    <!-- Карта ноутбука Gigabyte G7 KF -->
+    <div class="laptop-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/lap1.jpg" data-price="1100">
+        <!-- Зображення ноутбука -->
+        <img src="img/lap1.jpg" alt="Gigabyte G7 KF" class="laptop-image">
+        <!-- Інформація про ноутбук -->
+        <div class="laptop-info">
+            <!-- Назва ноутбука -->
+            <h2 class="laptop-title">Gigabyte G7 KF</h2>
+            <!-- Об'єм накопичувача -->
+            <span class="storage">512 ГБ SSD</span>
+            <!-- Теги, що описують характеристики -->
+            <div class="tags">
+                <span>2023 рік</span>
+                <span>ігровий</span>
+                <span>матовий</span>
+                <span>144 Гц</span>
+                <span>Wi-Fi 6E</span>
+            </div>
+            <!-- Детальний опис -->
+            <div class="details">
+                <p><strong>Екран:</strong> 17.3", 1920x1080 (16:9)</p>
+                <p><strong>Графіка:</strong> NVIDIA GeForce RTX 4060</p>
+                <p><strong>ОЗП:</strong> 16 ГБ</p>
+                <p><strong>Накопичувач:</strong> 512 ГБ SSD M.2 NVMe</p>
+                <p><strong>Вага:</strong> 2.53 кг</p>
+            </div>
+        </div>
+        <!-- Кнопка для перегляду товару -->
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карта ноутбука Asus TUF Gaming A15 -->
+    <div class="laptop-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/lap2.jpg" data-price="1400">
+        <img src="img/lap2.jpg" alt="Asus TUF Gaming A15" class="laptop-image">
+        <div class="laptop-info">
+            <h2 class="laptop-title">Asus TUF Gaming A15</h2>
+            <span class="storage">512 ГБ SSD</span>
+            <div class="tags">
+                <span>2023 рік</span>
+                <span>ігровий</span>
+                <span>матовий</span>
+                <span>144 Гц</span>
+                <span>Wi-Fi 6</span>
+                <span>швидка зарядка</span>
+            </div>
+            <div class="details">
+                <p><strong>Екран:</strong> 15.6", 1920x1080 (16:9)</p>
+                <p><strong>Графіка:</strong> NVIDIA GeForce RTX 4050</p>
+                <p><strong>ОЗП:</strong> від 8 до 64 ГБ</p>
+                <p><strong>Накопичувач:</strong> 512 ГБ - 2048 ГБ SSD M.2 NVMe</p>
+                <p><strong>Вага:</strong> 2.2 кг</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карта ноутбука Acer Nitro V 15 ANV15-41 -->
+    <div class="laptop-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/lap3.jpg" data-price="1100">
+        <img src="img/lap3.jpg" alt="Acer Nitro V 15" class="laptop-image">
+        <div class="laptop-info">
+            <h2 class="laptop-title">Acer Nitro V 15 ANV15-41</h2>
+            <span class="storage">512 ГБ SSD</span>
+            <div class="tags">
+                <span>2024 рік</span>
+                <span>ігровий</span>
+                <span>матовий</span>
+                <span>144 Гц</span>
+                <span>Wi-Fi 6</span>
+                <span>USB4</span>
+            </div>
+            <div class="details">
+                <p><strong>Екран:</strong> 15.6", 1920x1080 (16:9)</p>
+                <p><strong>Графіка:</strong> NVIDIA GeForce RTX 2050 - RTX 4060</p>
+                <p><strong>ОЗП:</strong> 16 - 32 ГБ</p>
+                <p><strong>Накопичувач:</strong> 512 - 1024 ГБ SSD M.2 NVMe</p>
+                <p><strong>Вага:</strong> 2.1 кг</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карта ноутбука Lenovo ThinkPad X1 Yoga Gen6 -->
+    <div class="laptop-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/lap4.jpg" data-price="1200">
+        <img src="img/lap4.jpg" alt="Lenovo ThinkPad X1 Yoga Gen6" class="laptop-image">
+        <div class="laptop-info">
+            <h2 class="laptop-title">Lenovo ThinkPad X1 Yoga Gen6</h2>
+            <span class="storage">512 ГБ SSD</span>
+            <div class="tags">
+                <span>2021 рік</span>
+                <span>трансформер 360°</span>
+                <span>Ultra HD (4K)</span>
+                <span>Intel Evo</span>
+                <span>Wi-Fi 6</span>
+                <span>LTE</span>
+            </div>
+            <div class="details">
+                <p><strong>Екран:</strong> 14", 3840x2400 (16:10)</p>
+                <p><strong>Процесор:</strong> Intel Core i7</p>
+                <p><strong>Графіка:</strong> GPU Iris Xe Graphics G7 96EUs</p>
+                <p><strong>ОЗП:</strong> 16 ГБ</p>
+                <p><strong>Накопичувач:</strong> 512 ГБ SSD M.2 NVMe</p>
+                <p><strong>Вага:</strong> 1.4 кг</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+
+    <!-- Карта ноутбука Apple MacBook Pro 16 (2024) -->
+    <div class="laptop-card" onmouseenter="showButton(this)" onmouseleave="hideButton(this)" data-image="img/lap5.jpg" data-price="3000">
+        <img src="img/lap5.jpg" alt="Apple MacBook Pro 16 (2024)" class="laptop-image">
+        <div class="laptop-info">
+            <h2 class="laptop-title">Apple MacBook Pro 16 (2024)</h2>
+            <span class="storage">512 - 1024 ГБ SSD</span>
+            <div class="tags">
+                <span>2024 рік</span>
+                <span>Ultra HD (4K)</span>
+                <span>miniLED</span>
+                <span>120 Гц</span>
+                <span>USB4</span>
+                <span>Wi-Fi 6E</span>
+            </div>
+            <div class="details">
+                <p><strong>Екран:</strong> 16.2", 3456x2234</p>
+                <p><strong>Процесор:</strong> Apple M4 Pro / Apple M4 Max</p>
+                <p><strong>Графіка:</strong> GPU M4 Max 32-Core - M4 Pro 20-Core</p>
+                <p><strong>ОЗП:</strong> 24 - 48 ГБ</p>
+                <p><strong>Накопичувач:</strong> 512 - 1024 ГБ SSD</p>
+                <p><strong>Вага:</strong> 2.14 кг</p>
+            </div>
+        </div>
+        <button class="view-button" onclick="showProductDetails(this)">Переглянути товар</button>
+    </div>
+</section>
+
+
+<!-- Модальне вікно для деталей товару -->
+<div id="product-modal" class="modal">
+    <!-- Контент модального вікна -->
+    <div class="modal-content">
+        <!-- Кнопка закриття модального вікна -->
+        <span class="close-button" onclick="closeProductModal()">×</span>
+        <!-- Заголовок модального вікна -->
+        <h2 id="modal-title"></h2>
+        <!-- Зображення товару -->
+        <img id="modal-image" src="" alt="" class="modal-image">
+        <!-- Ціна товару -->
+        <p id="modal-price"></p>
+        <!-- Кнопка додавання товару до кошика -->
+        <button class="buy-button">В кошик</button>
+    </div>
+</div>
+
+
+<!-- Посилання на JS файл -->
+<script src="laptopJS.js"></script>
+
+</body>
+</html>
