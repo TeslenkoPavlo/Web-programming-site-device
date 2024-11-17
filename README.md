@@ -1,5 +1,5 @@
 # Device - Інтернет-магазин техніки
-[![Open in GitHub Codespaces]([https://img.shields.io/badge/Open%20in-GitHub%20Codespaces-blue?logo=github)](https://glorious-parakeet-g4r5vjgxvw729j9j.github.dev/](https://organic-parakeet-9779vx5575jx27q5w.github.dev/))
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in-GitHub%20Codespaces-blue?logo=github)](https://organic-parakeet-9779vx5575jx27q5w.github.dev/)
 
 **Device** – це сучасний онлайн-магазин, який пропонує широкий асортимент техніки для будь-яких потреб. Ми прагнемо забезпечити клієнтів якісними гаджетами за вигідними цінами та зручним сервісом.
 
